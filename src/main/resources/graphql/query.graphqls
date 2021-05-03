@@ -1,0 +1,12 @@
+scalar Date
+
+type Query {
+    helloWorld:String
+}
+type Mutation {
+}
+
+type ReturnInfo {
+    isError: Boolean!
+    message: String!
+}

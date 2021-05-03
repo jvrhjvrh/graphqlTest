@@ -1,0 +1,24 @@
+extend type Mutation {
+    putUser(user: UserInput): UserReturn
+}
+
+extend type Query {
+    getUser(id: String): UserReturn
+}
+
+input UserInput {
+    id: String
+    birthday: Date
+    firstName:String
+    lastName: String
+}
+type UserReturn {
+    user: [User]
+    info: ReturnInfo!
+}
+type User {
+    id: String!
+    birthday: Date!
+    firstName:String!
+    lastName: String!
+}

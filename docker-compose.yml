@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mongodb:
+    image: "mongo:latest"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: password
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+    - 8080:8080
+    environment:
+      URI: "mongodb://mongo:password@mongodb:27017/teste"
